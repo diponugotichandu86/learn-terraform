@@ -48,3 +48,9 @@ output "o2" {
 output "o3" {
   value = var.Map.AWS
 }
+
+variable "env" {}
+
+output "o4" {
+  value = var.env
+}
