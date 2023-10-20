@@ -8,8 +8,8 @@ output "o5" {
 
 data "aws_ami" "example" {
   owners = [" 973714476881"]
-  most_recent      = true
-  name_regex       = "centos-8-devops-practice"
+  most_recent = true
+  name_regex = "Centos-8-DevOps-Practice"
 }
 
 output "o6" {
