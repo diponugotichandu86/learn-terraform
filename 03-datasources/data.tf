@@ -7,7 +7,7 @@ output "o5" {
 }
 
 data "aws_ami" "example" {
-  executable_users = ["amazon"]
+  owners = ["amazon"]
   most_recent      = true
   name_regex       = "centos-8-devops-practice"
 }
