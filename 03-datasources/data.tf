@@ -13,7 +13,7 @@ data "aws_ami" "example" {
 }
 
 output "o6" {
-  value = data.aws_ami.example.id
+  value = data.aws_ami.example.creation_date
 }
 
 provider "aws" {
