@@ -11,3 +11,11 @@ data "aws_ec2_spot_price" "example" {
 output "price" {
   value = data.aws_ec2_spot_price.example.id
 }
+
+data "aws_security_group" "selected" {
+  name = "allow-all"
+}
+
+output "o5" {
+  value = data.aws_security_group.selected.id
+}
