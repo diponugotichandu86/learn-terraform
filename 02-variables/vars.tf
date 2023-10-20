@@ -3,7 +3,7 @@ variable "sample" {
 }
 
 variable "sample1" {
-  value="Welcome"
+  default="Welcome"
 }
 
 output "sampleoutput1" {
@@ -14,6 +14,6 @@ output "sampleoutput2" {
   value = var.sample1
 }
 
-output "sampleoutpu3" {
+output "sampleoutput3" {
   value = "Value of Sample1 is ${var.sample1}"
 }
