@@ -5,3 +5,14 @@ data "aws_security_group" "selected" {
 output "o5" {
   value = data.aws_security_group.selected.id
 }
+
+data "aws_ami" "example" {
+  executable_users = ["amazon"]
+  most_recent      = true
+  name_regex       = "centos-8-devops-practice"
+}
+
+output "o6" {
+  value = data.aws_ami.example.id
+}
+
