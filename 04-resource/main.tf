@@ -12,6 +12,6 @@ resource "aws_instance" "web" {
   }
 }
 
-output "amiid" {
+output "ami_id" {
   value = data.aws_ami.example.id
 }
