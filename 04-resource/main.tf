@@ -11,3 +11,7 @@ resource "aws_instance" "web" {
     Name = "HelloWorld"
   }
 }
+
+output "amiid" {
+  value = data.aws_ami.example.id
+}
