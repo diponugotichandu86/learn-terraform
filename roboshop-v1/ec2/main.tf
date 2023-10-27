@@ -11,12 +11,16 @@ resource "aws_instance" "web" {
   tags = {
     Name = var.name
   }
+}
+
+resource "null_resource" "ansible" {
+  depends_on = ["aws_instance.web","aws_route53_record.www"]
   provisioner "remote-exec" {
     connection {
       type     = "ssh"
       user     = "centos"
       password = "DevOps321"
-      host     = self.public_ip
+      host     = aws_instance.web.public_ip
     }
     inline = [
       "sudo labauto ansible",
@@ -29,7 +33,7 @@ resource "aws_route53_record" "www" {
   zone_id = "Z07202503ICKMLV30DX1X"
   name    = "${var.name}-dev"
   type    = "A"
-  ttl     = 300
+  ttl     = 30
   records = [aws_instance.web.private_ip]
 }
 
