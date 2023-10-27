@@ -5,10 +5,14 @@ data "aws_ami" "example" {
 }
 
 resource "aws_instance" "web" {
-  count = 3
+  count = length(var.sample)
   ami           = data.aws_ami.example.id
   instance_type = "t3.micro"
   tags = {
-    Name = "HelloWorld"
+    Name = var.sample[count.index]
   }
+}
+
+variable "sample" {
+  default = ["frontend","catalogue","cart"]
 }
