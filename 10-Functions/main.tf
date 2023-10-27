@@ -1,5 +1,5 @@
 variable "test" {
-  default = ["Devops","Linux"]
+  default = "Devops"
 }
 
 output "upper" {
