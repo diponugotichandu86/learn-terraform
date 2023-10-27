@@ -7,7 +7,7 @@ data "aws_ami" "example" {
 resource "aws_instance" "web" {
   for_each = var.instance
   ami           = data.aws_ami.example.id
-  instance_type = each.value["instance_type"]
+  instance_type = lookup(each.value,"instance_type","t3.micro")
   tags = {
     Name = each.key
   }
