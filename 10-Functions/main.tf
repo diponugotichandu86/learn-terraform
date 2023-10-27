@@ -1,7 +1,7 @@
 variable "test" {
-  default = "Devops"
+  default = ["Devops","Linux"]
 }
 
 output "upper" {
-  value = upper(var.test)
+  value = upper(var.test) - length(var.test)
 }
