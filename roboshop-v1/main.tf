@@ -11,10 +11,10 @@ variable "instances" {
     catalogue = {}
     redis = {}
     user = {}
-    mysql = {}
     cart = {}
-    payment = {}
-    rabbitmq = {}
+    mysql = {}
     shipping = {}
+    rabbitmq = {}
+    payment = {}
   }
 }
